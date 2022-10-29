@@ -34,7 +34,7 @@ def cut_audio(input_path):
 
 if __name__ == "__main__":
     arg_lens = len(sys.argv)
-    if arg_lens < 2 or arg_lens > 3:
+    if arg_lens < 2 or arg_lens > 4:
         raise RuntimeError("Invalid number of args. Please use right arguments.")
 
     method_name = sys.argv[1]
@@ -44,8 +44,8 @@ if __name__ == "__main__":
         cut_audio(input_file)
     elif method_name == "-dc":
         print("download and cut first 10 seconds.")
-        av_no = sys.argv[1]
-        name = sys.argv[2]
+        av_no = sys.argv[2]
+        name = sys.argv[3]
         file_name = extract_audio(av_no, name)
         cut_audio(file_name)
     else:
